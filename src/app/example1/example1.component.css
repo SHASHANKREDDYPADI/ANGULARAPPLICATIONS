@@ -1,0 +1,28 @@
+.row{
+    margin: 0;
+}
+.a{
+    height: 50vh;
+    background-color: white;
+}
+.b{
+    height: 50vh;
+    background-color: aqua;
+}
+.c{
+    height: 50vh;
+    background-color: white;
+}
+.d{
+    height: 50vh;
+    background-color:aqua;
+}
+.e{
+    height: 50vh;
+    background-color: white;
+    word-wrap: break-word;
+}
+.f{
+    height: 50vh;
+    background-color: aqua;
+}

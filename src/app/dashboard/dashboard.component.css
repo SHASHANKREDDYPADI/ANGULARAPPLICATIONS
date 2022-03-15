@@ -1,0 +1,119 @@
+.parent {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+}
+.child1{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(10, 1, 15);
+    color: antiquewhite;
+}
+.child2 {
+    width: 80%;
+    height: 100%;
+    background-color: green;
+}
+.top {
+    width: 100%;
+    height: 5%;
+    background-color: pink;
+}
+input {
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 790px;
+    border-radius: 8px;
+    
+}
+.bottom{
+    width: 100%;
+    height: 95%;
+    background-color:white;
+}
+.a{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    background-color:white; 
+}
+.b {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    background-color:white;
+}
+.sr1{
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 50px;
+    width: 30%;
+    height: 50%;
+    background-color:blue;
+    color: antiquewhite;
+    
+}
+.sr2{
+    margin-top: 20px;
+    margin-right: 50px;
+    width: 30%;
+    height: 50%;
+    background-color:green;
+    color: antiquewhite;
+}
+.sr3{
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 30%;
+    height: 50%;
+    background-color:red;
+    color: antiquewhite;
+}
+.psr1{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 20px;
+    width: 45%;
+    height: 80%;
+    background-color:orange;
+}
+.psr2{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 20px;
+    width: 45%;
+    height: 80%;
+    background-color:powderblue;
+}
+.l1{
+    width: 100%;
+    height: 15%;
+    background-color:green;
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+img {
+    width: 100%;
+    height: 213px;
+}
+.l2{
+    width: 100%;
+    height: 15%;
+    background-color:green;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+h4 {
+    text-decoration: underline;
+}
+h2{
+    margin-left: 270px;
+}
+h6{
+    margin-left: 230px;
+}
+button{
+    margin: 188px 60px;
+}

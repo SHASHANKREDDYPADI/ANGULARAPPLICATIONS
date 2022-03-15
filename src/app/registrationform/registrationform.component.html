@@ -1,0 +1,65 @@
+<div class="parent">
+    <div class="child">
+        <h2>Registration form</h2>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" [(ngModel)]="name">
+        <br>
+        <label>Email:</label>
+        <input type="text" placeholder="Enter your email" [(ngModel)]="email">
+        <br>
+        <label>Phone:</label>
+        <input type="text" placeholder="Enter your phone number" [(ngModel)]="phone">
+        <br>
+        <label>Date of Birth:</label>
+        <input type="date" [(ngModel)]="dob">
+        <br>
+        <label>Age:</label>
+        <input type="number" placeholder="Enter your age" [(ngModel)]="age">
+        <br>
+        <label>Account Balance:</label>
+        <input type="number" placeholder="Enter your account balance" [(ngModel)]="accountbalance">
+        <br>
+        <label>City:</label>
+        <select [(ngModel)]="city">
+            <option>Hyderabad</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Pune</option>
+        </select>
+        <br>
+        <button (click)="signup()">SIGN UP</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Date of Birth</th>
+                    <th>Age</th>
+                    <th>Account Balance</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of persons; let i=index">
+                    <ng-container *ngIf="person.accountbalance>=0">
+                        <td>{{person.name|uppercase}}</td>
+                        <td>{{person.email|lowercase}}</td>
+                        <td>{{person.phone}}</td>
+                        <td>{{person.city|uppercase}}</td>
+                        <td>{{person.dob|date:'yyyy-MM-dd'}}</td>
+                        <td [ngClass]="person.age>18?'text-success':'text-danger'">{{person.age}}</td>
+                        <td>{{person.accountbalance}}</td>
+                        <td>
+                            <button (click)="delete(i)">Delete</button>
+                        </td>
+                    </ng-container>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+</div>

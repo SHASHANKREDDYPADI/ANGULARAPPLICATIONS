@@ -1,0 +1,22 @@
+.parent{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+form{
+    width: 80vw;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.alert{
+    color: red;
+    padding: 0%;
+    margin: 0%;
+    margin-bottom: 0;
+}
+h1{
+    text-align: center;
+}
+p{
+    margin-bottom: 0;
+}

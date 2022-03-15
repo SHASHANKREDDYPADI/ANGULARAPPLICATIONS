@@ -1,0 +1,28 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width: 25%;
+    height: 60%;
+    background-color: white;
+}
+.btn1, .btn2, .btn3{
+    width: 350px;
+    border-radius: 20px;
+}
+.btn2{
+    background-color: red;
+    margin-bottom: -30px; 
+}
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
+input{
+    border-radius: 30px;
+}

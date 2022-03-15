@@ -1,0 +1,86 @@
+<h1>{{name}}</h1>
+<h2>{{age}}</h2>
+<h3>{{product.name}}</h3>
+<h3>{{product.price}}</h3>
+<h2>{{product|json}}</h2>
+<p>{{phones[1]}}</p>
+<p>{{phones}}</p>
+<p *ngFor="let phone of phones">{{phone}}</p>
+<div *ngFor="let user of users">
+    <p>name:{{user.name}}</p>
+    <p>age:{{user.age}}</p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Image URL</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>ContactNumber</th>
+            <th>Age</th>
+            <th>DOB</th>
+            <th>Salary</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>
+                <img src="{{employee.imageUrl}}" alt="">
+            </td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.contactNumber}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.dob}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.address}}</td>
+
+
+        </tr>
+    </tbody>
+</table>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>VEHICLE</th>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Fuel</th>
+            <th>Color</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+            <td>{{vehicle.Vehicle}}</td>
+            <td>{{vehicle.manufacturer}}</td>
+            <td>{{vehicle.model}}</td>
+            <td>{{vehicle.type}}</td>
+            <td>{{vehicle.fuel}}</td>
+            <td>{{vehicle.color}}</td>
+            <td>{{vehicle.id}}</td>
+        </tr>
+    </tbody>
+</table>
+<input [(ngModel)]="myname">
+<h1>{{myname}}</h1>

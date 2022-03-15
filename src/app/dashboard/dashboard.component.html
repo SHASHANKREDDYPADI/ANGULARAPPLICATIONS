@@ -1,0 +1,24 @@
+<div class="parent">
+    <div class="child1">
+        <ul>
+            <li routerLink="interpolation">Interpolation</li>
+            <li routerLink="event-binder">Eventbinder</li>
+            <li routerLink="interaction">Interaction</li>
+            <li routerLink="create-account">Create account</li>
+            <li routerLink="account-summary">Account summary</li>
+            <li routerLink="example1">Example1</li>
+            <li routerLink="registrationform" >Registration Form</li>
+            <li routerLink="vehicle">Vehicle Info.</li>
+            <li routerLink="vehicle_new">Vehicle form</li>
+            <li routerLink="banking">Bank Details</li>
+            <li routerLink="store"> App Store</li>
+            <li routerLink="form-details">Application form</li>
+            <li routerLink="order_food">Order Food</li>
+            
+           <button (click)="logout()">Logout</button>
+        </ul>
+    </div>
+    <div class="child2">
+        <router-outlet></router-outlet>
+    </div>
+</div>

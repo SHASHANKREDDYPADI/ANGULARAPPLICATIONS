@@ -1,0 +1,115 @@
+<div class="parent">
+    <form [formGroup]="applicationForm">
+        <h2>Application Form</h2>
+        <label>Name:</label>
+        <input type="text" formControlName="name">
+        <div *ngIf="applicationForm.get('name')?.invalid && applicationForm.get('name')?.touched" class="alert">
+            <p *ngIf="applicationForm.get('name')?.errors?.['required']">*This field is required</p>
+            <p *ngIf="applicationForm.get('name')?.errors?.['minlength']">Minimum 3 characters required</p>
+            <p *ngIf="applicationForm.get('name')?.errors?.['maxlength']">Maximum 10 characters required</p>
+        </div>   
+
+        <!-- <p>value:{{applicationForm.get('name')?.value}}</p>
+        <p>errors:{{applicationForm.get('name')?.errors|json}}</p>
+        <p>invalid:{{applicationForm.get('name')?.invalid}}</p>
+        <p>touched:{{applicationForm.get('name')?.touched}}</p>
+        <p>dirty:{{applicationForm.get('name')?.dirty}}</p>
+        <p>pristine:{{applicationForm.get('name')?.pristine}}</p>
+        <p>status:{{applicationForm.get('name')?.status}}</p>  -->
+
+        <br>
+        <label>Email:</label>
+        <input type="text" formControlName="email" >
+        <div *ngIf="applicationForm.get('email')?.invalid && applicationForm.get('email')?.touched" class="alert">
+            <p *ngIf="applicationForm.get('email')?.errors?.['required']">*This field is required</p>
+            <p *ngIf="applicationForm.get('email')?.errors?.['email']">*Special characters required</p>
+        </div> 
+        <br>  
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" formControlName="gender" value="male">
+        <label>Male</label>
+        <input type="radio" name="gender" formControlName="gender" value="female">
+        <label>Female</label>
+        <br>
+        <div formGroupName="address" class="address">
+            <label>Address:</label>
+            <br>
+            <label>City:</label>
+            <input type="text" formControlName="city">
+            <br>
+            <label>State:</label>
+            <select formControlName="state">
+                <option></option>
+                <option>Telangana</option>
+                <option>Bihar</option>
+                <option>Maharashtra</option>
+                <option>Kerala</option>
+                <option>Karnataka</option>
+            </select>
+            <br>
+            <label>Pin:</label>
+            <input [ngClass]="applicationForm.get('address')?.get('pin')?.invalid && applicationForm.get('address')?.get('pin')?.touched ? 'r' : '' " type="number" formControlName="pin">
+            <div *ngIf="applicationForm.get('address')?.get('pin')?.invalid && applicationForm.get('address')?.get('pin')?.touched" class="alert"> 
+                <p *ngIf="applicationForm.get('address')?.get('pin')?.errors?.['required']">*This field is required</p>
+                <p *ngIf="applicationForm.get('address')?.get('pin')?.errors?.['min']">*Minimun 6 letters required</p>
+                <p *ngIf="applicationForm.get('address')?.get('pin')?.errors?.['max']">*Maximum 6 letters required</p>
+            </div>       
+            <br>
+        </div>
+        <label>Branch:</label>
+        <input type="radio" name="branch" formControlName="branch" value="MPC">
+        <label>MPC</label>
+        <input type="radio" name="branch" formControlName="branch" value="CEC">
+        <label>CEC</label>
+        <br>
+        <div *ngIf="applicationForm.get('branch')?.value=='MPC'">
+            <label>Maths:</label>
+            <input type="text" formControlName="maths" >
+            <br>
+            <label>Physics:</label>
+            <input type="text" formControlName="physics" >
+            <br>
+            <label>Chemistry:</label>
+            <input type="text" formControlName="chemistry" >
+            <br>
+        </div>
+        <div *ngIf="applicationForm.get('branch')?.value=='CEC'">
+            <label>Civics:</label>
+            <input type="text" formControlName="civics" >
+            <br>
+            <label>Economics:</label>
+            <input type="text" formControlName="economics" >
+            <br>
+            <label>Commerce:</label>
+            <input type="text" formControlName="commerce" > 
+            <br>
+        </div>
+        <div formArrayName="cards">
+            <div *ngFor="let card of cardsFormArray.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <label>Card Number:</label>
+                    <input type="text" formControlName="cardnumber">
+                    <div *ngIf="cardsFormArray.controls[i].get('cardnumber')?.invalid && cardsFormArray.controls[i].get('cardnumber')?.touched" class="alert">
+                        <p *ngIf="cardsFormArray.controls[i].get('cardnumber')?.errors?.['required']">*This field is required</p>
+                        <p *ngIf="cardsFormArray.controls[i].get('cardnumber')?.errors?.['minlength']">*minimun 16 numbers required</p>
+                        <p *ngIf="cardsFormArray.controls[i].get('cardnumber')?.errors?.['maxlength']">*maximum 16 numbers required</p>        
+                    </div>
+                    <br>
+                    <label>Expiry Date:</label>
+                    <input type="text" formControlName="expirydate">
+                    <br>
+                    <label>CVV:</label>
+                    <input type="text" formControlName="cvv">
+                    <br>
+                    <button (click)="deletecart(i)">Delete</button>
+                </div>
+            </div>
+        </div>
+        <button (click)="addtocart()">Add to cart</button>
+        <button (click)="submit()">Submit</button>
+
+
+
+    </form>
+</div>

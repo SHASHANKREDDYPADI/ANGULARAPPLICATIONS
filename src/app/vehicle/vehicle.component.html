@@ -1,0 +1,56 @@
+<input type="text" [(ngModel)]="search" >
+<button (click)="filter()">Search</button>
+<br>
+<br>
+<label>Sortby</label>
+<select [(ngModel)]="sortBy">
+    <option>Vehicle</option>
+    <option>manufacturer</option>
+    <option>model</option>
+    <option>type</option>
+    <option>fuel</option>
+    <option>color</option>
+    <option>id<option>
+</select>
+<label>Order</label>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc<option>
+</select>
+<button (click)="sort()">Sort</button>
+<br>
+<br>
+<label>Page Numbers</label>
+<input type="text" [(ngModel)]="pageNumbers">
+<label>Limit</label>
+<input type="text" [(ngModel)]="limit">
+<button (click)="pagination()">Get</button>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>VEHICLE</th>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Fuel</th>
+            <th>Color</th>
+            <th>ID</th>
+            <th>Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+            <td>{{vehicle.Vehicle}}</td>
+            <td>{{vehicle.manufacturer}}</td>
+            <td>{{vehicle.model}}</td>
+            <td>{{vehicle.type}}</td>
+            <td>{{vehicle.fuel}}</td>
+            <td>{{vehicle.color}}</td>
+            <td>{{vehicle.id}}</td>
+            <td>
+                <button (click)="delete(vehicle.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
